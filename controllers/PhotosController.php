@@ -10,7 +10,7 @@ class PhotosController {
     private array $photos = [];
 
     public function setSol() {
-        $this->sol = strval(rand(0, 2000) + 1);
+        $this->sol = strval(mt_rand(1, 2001));
     }
 
     public function setCurrentRover(string $rover) {
