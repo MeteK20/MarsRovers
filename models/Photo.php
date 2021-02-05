@@ -7,13 +7,11 @@ class Photo {
     // attributen
     private int $id;
     private string $url;
-    private string $roverName;
 
     // constructor
-    public function __construct(int $id, string $url, string $roverName) {
+    public function __construct(int $id, string $url) {
         $this->id = $id;
         $this->url = $url;
-        $this->roverName = $roverName;
     }
 
     // methoden
@@ -25,20 +23,12 @@ class Photo {
         return $this->url;
     }
 
-    public function getRoverName() : string {
-        return $this->roverName;
-    }
-
     public function setId(int $id) {
         $this->id = $id;
     }
 
     public function setUrl(string $url) {
         $this->url = $url;
-    }
-
-    public function setRoverName(string $roverName) {
-        $this->roverName = $roverName;
     }
 
 }
