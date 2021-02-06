@@ -4,8 +4,8 @@ declare(strict_types = 1);
 
 class Rover {
     // attributen
-    private string $roverName = '';
-    private string $sol = '';
+    private string $roverName;
+    private string $sol;
 
     // constructor
     public function __construct(string $roverName, string $sol) {

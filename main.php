@@ -3,7 +3,7 @@
 include('models/Photo.php');
 include('models/Rover.php');
 
-/* maak nieuwe rover object aan, en zet de standaard rover op curiosity
+/* maak een nieuwe rover object aan, en zet de standaard rover op curiosity
     en geef een random sol waarde - mt_rand is de meest efficiente random 
     generator functie */
 $rover = new Rover('Curiosity', strval(mt_rand(1, 2001)));
@@ -11,7 +11,7 @@ $rover = new Rover('Curiosity', strval(mt_rand(1, 2001)));
 $response = '';
 $photos = [];
 
-// check geselecteerde rover en zet de waarde hiernaar
+// check de geselecteerde rover en zet de waarde hiernaar
 if (isset($_POST['submit'])) {
     if(isset($_POST['rover'])) {
         if($_POST['rover'] === 'cur') {
@@ -22,7 +22,7 @@ if (isset($_POST['submit'])) {
     }
 }
 
-// doe GET verzoek op API haal JSON response op
+// doe een GET verzoek op de API en haal JSON response op
 if($rover->getRoverName() === 'Curiosity') {
     $response = file_get_contents('https://api.nasa.gov/mars-photos/'
 . 'api/v1/rovers/curiosity/photos?sol=' . $rover->getSol() . '&page=1&'
