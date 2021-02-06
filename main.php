@@ -33,10 +33,10 @@ if($rover->getRoverName() === 'Curiosity') {
     . 'api_key=508iAP5ZmqYM1BWgEORMF7ikPEJUtKJVKCPgJkn2');
 }
 
-// converteer JSON data naar PHP array
+// converteer JSON data naar een PHP array
 $photos = json_decode($response, true);
 
-// haal foto's op van API en geef ze weer in HTML-elementen
+// haal foto's op van de API en geef ze weer in HTML-elementen
 if(empty($photos['photos'])) {
     echo 'Geen foto\'s gevonden, herlaad de pagina';
 } else {

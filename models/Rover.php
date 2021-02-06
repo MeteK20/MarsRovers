@@ -3,6 +3,7 @@
 declare(strict_types = 1);
 
 class Rover {
+    
     // attributen
     private string $roverName;
     private string $sol;
@@ -29,6 +30,7 @@ class Rover {
     public function setSol(string $sol) {
         $this->sol = $sol;
     }
+    
 }
 
 ?>
