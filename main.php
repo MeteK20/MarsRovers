@@ -2,6 +2,7 @@
 
 include('models/Photo.php');
 include('models/Rover.php');
+include('constants.php');
 
 /* maak een nieuwe rover object aan, en zet de standaard rover op curiosity
     en geef een random sol waarde - mt_rand is de meest efficiente random 
@@ -26,11 +27,11 @@ if (isset($_POST['submit'])) {
 if($rover->getRoverName() === 'Curiosity') {
     $response = file_get_contents('https://api.nasa.gov/mars-photos/'
 . 'api/v1/rovers/curiosity/photos?sol=' . $rover->getSol() . '&page=1&'
-. 'api_key=508iAP5ZmqYM1BWgEORMF7ikPEJUtKJVKCPgJkn2');
+. 'api_key=' . $apiKey);
 } else if($rover->getRoverName() === 'Opportunity') {
     $response = file_get_contents('https://api.nasa.gov/mars-photos/' 
     . 'api/v1/rovers/opportunity/photos?sol=' . $rover->getSol() . '&page=1&'
-    . 'api_key=508iAP5ZmqYM1BWgEORMF7ikPEJUtKJVKCPgJkn2');
+    . 'api_key=' . $apiKey);
 }
 
 // converteer JSON data naar een PHP array
